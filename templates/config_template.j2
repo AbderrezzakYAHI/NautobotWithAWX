@@ -1,0 +1,9 @@
+{# templates/interface.j2 #}
+{# Strip off CIDR to get pure IP #}
+{% set ip = ansible_host %}
+
+interface {{ interface_name }}
+ ip address {{ ip }} {{ netmask }}
+ description "{{ description }}"
+ no shutdown
+!

@@ -1,0 +1,19 @@
+---
+- name: Generate and push interface configs from NetBox
+  hosts: all
+  gather_facts: no
+  connection: network_cli
+
+  vars:
+    # Tell Ansible which network OS driver to use
+    ansible_network_os: cisco.ios.ios
+    interface_name: Gi2
+    netmask: "255.255.255.0"
+    description: "Production line at {{ inventory_hostname }}"
+
+  tasks:
+    - name: Render interface config from template
+      template:
+        src: config_template.j2
+        dest: ./output/{{ inventory_hostname }}_{{ lookup('pipe', 'date +%Y-%m-%d_%Hh-%Mm-%Ss') }}.cfg
+
