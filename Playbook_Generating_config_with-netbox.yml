@@ -2,7 +2,7 @@
 - name: Generate and push interface configs from NetBox
   hosts: all
   gather_facts: no
-  connection: network_cli
+  connection: local
 
   vars:
     # Tell Ansible which network OS driver to use
