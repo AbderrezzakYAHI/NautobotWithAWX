@@ -1,4 +1,4 @@
 plugin: networktocode.nautobot.inventory
-api_endpoint: http://192.168.128.131:8000
+api_endpoint: http://192.168.3.207:8000
 token: 6c5e1d08bba84b3ec93ae5890301fe565106590c
 validate_certs: false
