@@ -1,9 +1,0 @@
----
-- name: Test Nautobot Inventory
-  hosts: all
-  gather_facts: no
-
-  tasks:
-    - name: Show inventory hostname
-      debug:
-        msg: "Device = {{ inventory_hostname }}"
