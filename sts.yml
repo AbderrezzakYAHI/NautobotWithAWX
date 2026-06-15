@@ -1,0 +1,8 @@
+---
+- name: Show inventory variables
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - debug:
+        var: ansible_host
