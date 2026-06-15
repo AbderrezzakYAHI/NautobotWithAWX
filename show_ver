@@ -1,0 +1,14 @@
+---
+- name: Test Cisco Connectivity
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Run show version
+      cisco.ios.ios_command:
+        commands:
+          - show version
+      register: output
+
+    - debug:
+        var: output.stdout_lines
