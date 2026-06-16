@@ -1,0 +1,19 @@
+---
+- name: Collect IOS facts
+  hosts: all
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+
+    - name: Gather facts
+      cisco.ios.ios_facts:
+
+    - debug:
+        var: ansible_net_hostname
+
+    - debug:
+        var: ansible_net_version
+
+    - debug:
+        var: ansible_net_model
